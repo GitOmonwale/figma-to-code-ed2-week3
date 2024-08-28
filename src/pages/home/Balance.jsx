@@ -17,11 +17,11 @@ const Balance = () => {
             </div>
             <div className='text-blue grid grid-cols-2 gap-2'>
                 <button className='py-3 px-2 flex items-center rounded-xl gap-2 bg-lightBlue'>
-                    <img src={arrowUp} alt="" />
+                    <img src={arrowUp} alt="" className='dark:invert'/>
                     <span>Deposit</span>
                 </button>
                 <button className='py-3 px-2 flex items-center rounded-xl gap-2 bg-lightBlue'>
-                    <img src={arrowDown} alt="" />
+                    <img src={arrowDown} alt="" className='dark:invert'/>
                     <span>Withdraw</span>
                 </button>
             </div>

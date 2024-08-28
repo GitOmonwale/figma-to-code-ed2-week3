@@ -1,5 +1,5 @@
 import React from 'react'
-import { addWallet } from '../icons'
+import { addWallet, menu } from '../icons'
 import { useContext } from 'react'
 import { CryptoContext } from '../contexts/CryptoContext'
  
@@ -42,11 +42,7 @@ const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
             <div className='flex gap-8 items-center '>
                 <div className='flex items-center gap-2'>
                     <button className='h-10 w-12 items-center justify-center rounded-xl border border-gray lg:hidden flex' onClick={toggleSidebar}>
-                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M3.33325 10H16.6666" stroke="#1D1D1D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                           <path d="M3.33325 5H16.6666" stroke="#1D1D1D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                           <path d="M3.33325 15H16.6666" stroke="#1D1D1D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                           </svg>
+                          <img src={menu} alt="" className='dark:invert'/>
                     </button>
                     <div className='flex flex-col'>
                         <h1 className='text-dark dark:text-lightGray text-sm font-semibold'>Dashbord</h1>
@@ -61,7 +57,7 @@ const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
                 </div>
             </div>
             <div className='flex items-center gap-2'>
-                <select onClick={currencyHandler} className='h-10 px-1 flex items-center rounded-xl gap-2 text-darkGray border-[1px] bg-white border-gray outline-none'>
+                <select onClick={currencyHandler} className='h-10 px-1 flex items-center rounded-xl gap-2 text-darkGray border-[1px] bg-white dark:bg-transparent border-gray outline-none'>
                     <option value="usd">USD</option>
                     <option value="eur">EUR</option>
                     <option value="inr">INR</option>
