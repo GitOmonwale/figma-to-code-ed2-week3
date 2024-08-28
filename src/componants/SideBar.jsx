@@ -52,7 +52,7 @@ const SideBar = ({ isSidebarOpen }) => {
             ))}
           </div>
         </div>
-        <div className='absolute bottom-3 flex items-center w-full justify-between dark:bg-gray dark:bg-opacity-50 p-4 rounded-xl'>
+        <div className='absolute bottom-3 flex items-center w-full justify-between dark:bg-gray dark:bg-opacity-50 p-2 rounded-xl'>
           <div className='flex items-center gap-2'>
             <img src={avatar} alt="" className='rounded-full' />
             <div className='flex flex-col'>
