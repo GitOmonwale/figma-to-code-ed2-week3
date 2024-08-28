@@ -12,9 +12,9 @@ const Buttons = [
   { id: "7", image: settings, title: 'Settings' },
 ]
  
-const SideBar = () => {
+const SideBar = ({isSidebarOpen}) => {
   return (
-    <div className='left-0 fixed h-screen w-72 p-3 lg:flex hidden flex-col gap-5 border-r-[1px] border-gray text-dark transition-transform duration-300'>
+    <aside className={`left-0 top-0 fixed h-screen z-40 w-72 p-3 flex flex-col gap-5 lg:border-r-[1px] border-none border-gray text-dark transition-transform lg:translate-x-0 bg-white dark:bg-[#171923] ${isSidebarOpen ? "translate-x-0":"-translate-x-full"}`}>
       <div className='flex gap-2  bg-lightBlue w-full px-4 py-2 rounded-xl'>
         <img src={logo} alt="" />
         <div className='flex flex-col text-darkBlue'>
@@ -36,12 +36,12 @@ const SideBar = () => {
               <Button key={button.id} img={button.image} title={button.title} />
             ))}
           </div>
-          <button className='flex justify-between items-center w-full py-3 px-2 mb-2 rounded-xl active:bg-blue font-semibold text-xs'>
+          <button className='flex justify-between items-center w-full py-3 px-2 mb-2 rounded-xl active:bg-blue text-dark dark:text-white font-semibold text-xs'>
             <div className='flex gap-2'>
-            <img src={reports} alt="" />
+            <img src={reports} alt="" className='dark:invert' />
             <span>Reports</span>
             </div>
-            <img src={chevronDown} alt="" />
+            <img src={chevronDown} alt="" className='dark:invert' />
           </button>
           <div>
         {Buttons.slice(2).map(button => (
@@ -50,7 +50,7 @@ const SideBar = () => {
       </div>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }
 

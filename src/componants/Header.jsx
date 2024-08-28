@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { CryptoContext } from '../contexts/CryptoContext'
  
 
-const Header = ({ darkMode, toggleDarkMode }) => {
+const Header = ({ darkMode, toggleDarkMode, toggleSidebar }) => {
 
     const { setCurrency } = useContext(CryptoContext)
     const currencyHandler = (event) => {
@@ -38,18 +38,15 @@ const Header = ({ darkMode, toggleDarkMode }) => {
 
 
     return (
-        <div className='py-3 px-5 flex gap-2 items-center justify-between w-full border-b-[1px] border-b-lightGray'>
+        <div className='py-3 px-5 flex gap-2 items-center justify-between w-full border-b-[1px] border-b-lightGray bg-white dark:bg-[#171923]'>
             <div className='flex gap-8 items-center '>
                 <div className='flex items-center gap-2'>
-                    <button className='h-10 w-12 items-center justify-center rounded-xl border border-gray lg:hidden flex'>
-                        {
+                    <button className='h-10 w-12 items-center justify-center rounded-xl border border-gray lg:hidden flex' onClick={toggleSidebar}>
                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M3.33325 10H16.6666" stroke="#1D1D1D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                            <path d="M3.33325 5H16.6666" stroke="#1D1D1D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                            <path d="M3.33325 15H16.6666" stroke="#1D1D1D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                            </svg>
-                           
-                        }
                     </button>
                     <div className='flex flex-col'>
                         <h1 className='text-dark dark:text-lightGray text-sm font-semibold'>Dashbord</h1>

@@ -23,9 +23,9 @@ const TrendingCoinsList = () => {
   };
 
   return (
-    <div className="overflow-x-auto whitespace-nowrap scrollbar-hidden">
+    <div className="overflow-x-auto whitespace-nowrap scrollbar-hidden bg-white dark:bg-[#171923]">
       <div className='flex justify-between mb-2'>
-        <h3 className='text-base font-semibold'>Tendance</h3>
+        <h3 className='text-base font-semibold text-dark dark:text-lightGray'>Tendance</h3>
         {hasMoreCoins && (
           <button onClick={loadMoreCoins} className="flex items-center gap-1 text-dark">
             <span className='font-medium text-xs text-darkGray'>View more</span>
@@ -44,8 +44,8 @@ const TrendingCoinsList = () => {
               <div className='flex gap-2 items-center'>
                 <img src={coin.item.small} alt={coin.item.name} className="w-12 h-12 rounded-full" />
                 <div className='max-w-[calc(100%-3rem)]'>
-                  <h3 className="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap">{coin.item.name}</h3>
-                  <p className="text-darkGray opacity-60 text-xxs">{coin.item.symbol.toUpperCase()}</p>
+                  <h3 className="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap text-darkGray dark:text-lightGray">{coin.item.name}</h3>
+                  <p className="text-darkGray dark:text-gray opacity-60 dark:opacity-0 text-xxs">{coin.item.symbol.toUpperCase()}</p>
                 </div>
               </div>
               <div>
@@ -55,11 +55,11 @@ const TrendingCoinsList = () => {
                 </button>
               </div>
             </div>
-            <div className='text-darkGray'>
-              <div className='font-bold text-xs'>
+            <div className=''>
+              <div className='font-bold text-xs text-darkGray dark:text-lightGray'>
                 {coin.item.data.total_volume_btc} {coin.item.symbol.toUpperCase()}
               </div>
-              <div className='font-medium text-xxs'>
+              <div className='font-medium text-xxs text-darkGray dark:text-gray'>
                 {coin.item.data.total_volume}
               </div>
             </div>
