@@ -8,9 +8,12 @@ export const NewsProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchNews = async () => {
+      setLoading(true);
       try {
-        const response = await fetch('https://newsapi.org/v2/everything?q=bitcoin&apiKey=3e9e2a01288a4af280ed11a9a6743d68');
+        // Remplacez 'YOUR_API_KEY' par votre clé API GNews
+        const response = await fetch('https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=30&apikey=cc3967a5794438ff5e87760d017b7e36');
         const data = await response.json();
+        console.log(data)
         setArticles(data.articles);
       } catch (error) {
         console.error('Error fetching the news:', error);
