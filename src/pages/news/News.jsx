@@ -33,7 +33,7 @@ const News = () => {
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} toggleSidebar={toggleSidebar} />
         <div className='p-5 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 bg-white dark:bg-[#171923]'>
           {loading ? (
-            <p>Loading news...</p>
+            <p className='flex items-center justify-center'><Loader></Loader></p>
           ) : (
             articles.slice(0, visibleCount).map((article, index) => (
               <div key={index} className="flex flex-col gap-2 border border-lightGray p-2 rounded-lg dark:bg-[#292C3B]">
