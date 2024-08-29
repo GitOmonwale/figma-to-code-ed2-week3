@@ -55,7 +55,7 @@ const News = () => {
           )}
         </div>
         {visibleCount < articles.length && (
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-4 mb-8">
             <button 
               onClick={loadMore} 
               className="px-4 py-2 bg-gray text-black dark:text-white rounded-full dark:bg-[#292C3B] flex items-center justify-center">
