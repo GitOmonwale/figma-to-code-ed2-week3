@@ -34,7 +34,7 @@ const News = () => {
         <div className='p-5 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 bg-white dark:bg-[#171923]'>
           {loading ? (
             <div className='flex items-center justify-center'><Loader></Loader></div>
-          ) : articles && articles.length > 0 ? (
+          ) : articles && (
             articles.slice(0, visibleCount).map((article, index) => (
               <div key={index} className="flex flex-col gap-2 border border-lightGray p-2 rounded-lg dark:bg-[#292C3B]">
                 <div className='flex item-center justify-between'>
@@ -49,9 +49,7 @@ const News = () => {
                 <p className='text-darkGray dark:text-lightGray'>{article.description}</p>
               </div>
             ))
-          ):(
-            <p>Aucune nouvelle disponible pour le moment.</p>
-          )
+          ) 
         }
         </div>
         {visibleCount < articles.length && (
