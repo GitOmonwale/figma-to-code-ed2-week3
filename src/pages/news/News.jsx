@@ -52,7 +52,9 @@ const News = () => {
           ) 
         }
         </div>
-        {visibleCount < articles.length && (
+        {
+        articles &&
+        visibleCount < articles.length && (
           <div className="flex justify-center mt-4">
             <button 
               onClick={loadMore} 
