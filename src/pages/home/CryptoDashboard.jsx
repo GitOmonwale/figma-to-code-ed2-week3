@@ -35,7 +35,7 @@ const CryptoDashboard = () => {
     <div>
       <div className='flex items-center justify-between flex-wrap m-5 gap-2 bg-white dark:bg-[#171923]'>
         <form className="" onSubmit={searchHandler}>
-          <div className='min-w-72 p-2 border border-gray rounded flex items-center gap-2 bg-white dark:bg-[#171923]'>
+          <div className='sm:min-w-72 min-w-full p-2 border border-gray rounded flex items-center gap-2 bg-white dark:bg-[#171923]'>
             <button type='submit'>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_5039_665)">
@@ -60,11 +60,8 @@ const CryptoDashboard = () => {
           </div>
         </form>
         <div className=' bg-white dark:bg-[#171923]'>
-          <select className='border-[1px] min-w-72 p-2 text-darkGray border-gray rounded outline-none bg-transparent'>
+          <select className='border-[1px] sm:min-w-72 min-w-full p-2 text-darkGray border-gray rounded outline-none bg-transparent'>
             <option value="" disabled selected>Categories</option>
-            <option value="usd">USD</option>
-            <option value="eur">EUR</option>
-            <option value="inr">INR</option>
           </select>
         </div>
       </div>

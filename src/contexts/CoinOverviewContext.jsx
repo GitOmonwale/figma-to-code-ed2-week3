@@ -22,7 +22,7 @@ const {currency} = useContext(CryptoContext)
       const data = await response.json();
       setHistoricalData(data);
     } catch (error) {
-      console.error("Erreur lors de la récupération de l'hitorique du coin :", error);
+      console.error("Erreur lors de la récupération de l'historique du coin :", error);
     }
   };
 

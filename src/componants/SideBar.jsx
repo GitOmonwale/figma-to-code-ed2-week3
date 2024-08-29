@@ -15,9 +15,11 @@ const Buttons = [
 
 const SideBar = ({ isSidebarOpen }) => {
   return (
-    <aside className={`left-0 top-0 fixed h-screen z-40 w-72 p-3 lg:border-r border-none border-gray text-dark transition-transform lg:translate-x-0  dark:bg-[#171923] ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <aside className={`left-0 top-0 fixed h-screen z-40 w-72 p-3 lg:border-r border-none border-gray text-dark transition-transform lg:translate-x-0 bg-white dark:bg-[#171923] ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
       <div className='flex gap-2  bg-lightBlue w-full px-4 py-2 mb-5 rounded-xl'>
-        <img src={logo} alt="" />
+        <img
+          src={logo}
+          alt="icon logo" />
         <div className='flex flex-col text-darkBlue'>
           <h1 className='text-xs font-bold'>Tokena</h1>
           <h2 className='text-xxs'>Finace app</h2>
@@ -44,7 +46,10 @@ const SideBar = ({ isSidebarOpen }) => {
               <img src={reports} alt="" className='dark:invert' />
               <span>Reports</span>
             </div>
-            <img src={chevronDown} alt="" className='dark:invert' />
+            <img
+              src={chevronDown}
+              alt="chevronDown icon"
+              className='dark:invert' />
           </button>
           <div>
             {Buttons.slice(2).map(button => (
@@ -60,7 +65,10 @@ const SideBar = ({ isSidebarOpen }) => {
               <p className='text-darkGray dark:text-gray bg-opacity-0 dark:bg-opacity-50 text-xs'>johndoe8@gmail.com</p>
             </div>
           </div>
-          <img src={chevronDown} alt="" className='dark:invert'/>
+          <img
+            src={chevronDown}
+            alt="chevronDown Icon"
+            className='dark:invert' />
         </div>
       </div>
     </aside>

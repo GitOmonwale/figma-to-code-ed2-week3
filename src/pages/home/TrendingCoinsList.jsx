@@ -29,43 +29,49 @@ const TrendingCoinsList = () => {
         {hasMoreCoins && (
           <button onClick={loadMoreCoins} className="flex items-center gap-1 text-dark">
             <span className='font-medium text-xs text-darkGray'>View more</span>
-            <img src={chevronRight} alt="" />
+            <img
+              src={chevronRight}
+              alt="chevronRight icon"
+              className="dark:invert"
+            />
           </button>
         )}
       </div>
       <div className='lg:flex gap-3 grid sm:grid-cols-2 grid-cols-1'>
-      {trendingCoins.slice(0, visibleCoins).map((coin) => (
-        <div
-          key={coin.item.id}
-          className="inline-block lg:w-80 w-full p-4 bg-gray-100 rounded-2xl border border-lightGray"
-        >
-          <div className='flex flex-col gap-2'>
-            <div className='flex justify-between items-center gap-3'>
-              <div className='flex gap-2 items-center'>
-                <img src={coin.item.small} alt={coin.item.name} className="w-12 h-12 rounded-full" />
-                <div className='max-w-[calc(100%-3rem)]'>
-                  <h3 className="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap text-darkGray dark:text-lightGray">{coin.item.name}</h3>
-                  <p className="text-darkGray dark:text-gray opacity-60 dark:opacity-0 text-xxs">{coin.item.symbol.toUpperCase()}</p>
+        {trendingCoins.slice(0, visibleCoins).map((coin) => (
+          <div
+            key={coin.item.id}
+            className="inline-block lg:w-80 w-full p-4 bg-gray-100 rounded-2xl border border-lightGray"
+          >
+            <div className='flex flex-col gap-2'>
+              <div className='flex justify-between items-center gap-3'>
+                <div className='flex gap-2 items-center'>
+                  <img src={coin.item.small} alt={coin.item.name} className="w-12 h-12 rounded-full" />
+                  <div className='max-w-[calc(100%-3rem)]'>
+                    <h3 className="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap text-darkGray dark:text-lightGray">{coin.item.name}</h3>
+                    <p className="text-darkGray dark:text-gray opacity-60 dark:opacity-0 text-xxs">{coin.item.symbol.toUpperCase()}</p>
+                  </div>
+                </div>
+                <div>
+                  <button className={`px-2 py-1 text-xxs font-semibold rounded-2xl flex items-center ${coin.item.data.price_change_percentage_24h.btc < 0 ? 'text-red bg-lightRed' : 'text-green bg-lightGreen'}`}>
+                    <span>{coin.item.data.price_change_percentage_24h.btc.toFixed(2)}%</span>
+                    <img
+                      src={coin.item.data.price_change_percentage_24h.btc < 0 ? tradeDown : tradeUp}
+                      alt="up or down icon" />
+                  </button>
                 </div>
               </div>
-              <div>
-                <button className={`px-2 py-1 text-xxs font-semibold rounded-2xl flex items-center ${coin.item.data.price_change_percentage_24h.btc < 0 ? 'text-red bg-lightRed' : 'text-green bg-lightGreen'}`}>
-                  <span>{coin.item.data.price_change_percentage_24h.btc.toFixed(2)}%</span>
-                  <img src={coin.item.data.price_change_percentage_24h.btc < 0 ? tradeDown : tradeUp} alt="" />
-                </button>
-              </div>
-            </div>
-            <div className=''>
-              <div className='font-bold text-xs text-darkGray dark:text-lightGray'>
-                {coin.item.data.total_volume_btc} {coin.item.symbol.toUpperCase()}
-              </div>
-              <div className='font-medium text-xxs text-darkGray dark:text-gray'>
-                {coin.item.data.total_volume}
+              <div className=''>
+                <div className='font-bold text-xs text-darkGray dark:text-lightGray'>
+                  {coin.item.data.total_volume_btc} {coin.item.symbol.toUpperCase()}
+                </div>
+                <div className='font-medium text-xxs text-darkGray dark:text-gray'>
+                  {coin.item.data.total_volume}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   );

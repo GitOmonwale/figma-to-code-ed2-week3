@@ -23,7 +23,6 @@ const CryptoContextProvider = (props) => {
     }
   };
 
-
   useEffect(() => {
     fetchCoins();
   }, [currency]);

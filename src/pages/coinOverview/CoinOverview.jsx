@@ -41,7 +41,10 @@ const CoinOverview = () => {
       </div>
       <div className='mt-4 flex justify-between items-center font-semibold text-sm dark:text-lightGray'>
         <div className='flex items-center gap-1'>
-          <img src={coinDetails.image.large} alt={coinDetails.name} className='rounded-full h-10 x-10' />
+          <img
+            src={coinDetails.image.large}
+            alt={coinDetails.name}
+            className='rounded-full h-10 x-10' />
           <p>({coinDetails.symbol.toUpperCase()}/{currency.name.toUpperCase()})</p>
         </div>
         <div>{currency.symbol}{coinDetails.market_data.current_price[currency.name].toLocaleString()}</div>
