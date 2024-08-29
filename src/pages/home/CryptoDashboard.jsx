@@ -60,8 +60,12 @@ const CryptoDashboard = () => {
           </div>
         </form>
         <div className=' bg-white dark:bg-[#171923]'>
-          <select className='border-[1px] sm:min-w-72 min-w-full p-2 text-darkGray border-gray rounded outline-none bg-transparent'>
-            <option value="" disabled selected>Categories</option>
+          <select
+            className='border-[1px] sm:min-w-72 min-w-full p-2 text-darkGray border-gray rounded outline-none bg-transparent'
+            defaultValue=""
+          >
+            <option value="" disabled>Categories</option>
+             
           </select>
         </div>
       </div>
@@ -104,7 +108,7 @@ const CryptoDashboard = () => {
                       {coin.name} ({coin.symbol.toUpperCase()})
                     </Link>
                   </td>
-                  <td className="py-4 px-8">${coin.current_price}</td>
+                  <td className="py-4 px-8">{currency.symbol}{coin.current_price}</td>
                   <td>
                     <button className={`px-2 py-1 text-xxs font-semibold rounded-2xl ${coin.price_change_percentage_24h < 0 ? 'text-red bg-lightRed' : 'text-green bg-lightGreen'}`}>
                       {coin.price_change_percentage_24h.toFixed(2)}%
