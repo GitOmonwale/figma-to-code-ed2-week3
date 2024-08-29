@@ -33,8 +33,8 @@ const News = () => {
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} toggleSidebar={toggleSidebar} />
         <div className='p-5 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 bg-white dark:bg-[#171923]'>
           {loading ? (
-            <p className='flex items-center justify-center'><Loader></Loader></p>
-          ) : (
+            <div className='flex items-center justify-center'><Loader></Loader></div>
+          ) : articles && articles.length > 0 ? (
             articles.slice(0, visibleCount).map((article, index) => (
               <div key={index} className="flex flex-col gap-2 border border-lightGray p-2 rounded-lg dark:bg-[#292C3B]">
                 <div className='flex item-center justify-between'>
@@ -47,10 +47,12 @@ const News = () => {
                 <img src={article.urlToImage} alt="" className='h-52 w-full rounded-xl'/>
                 <h2 className="font-bold text-dark dark:text-gray">{article.title}</h2>
                 <p className='text-darkGray dark:text-lightGray'>{article.description}</p>
-               
               </div>
             ))
-          )}
+          ):(
+            <p>Aucune nouvelle disponible pour le moment.</p>
+          )
+        }
         </div>
         {visibleCount < articles.length && (
           <div className="flex justify-center mt-4">
