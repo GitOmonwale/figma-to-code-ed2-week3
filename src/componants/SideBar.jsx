@@ -15,7 +15,7 @@ const Buttons = [
 
 const SideBar = ({ isSidebarOpen }) => {
   return (
-    <aside className={`left-0 top-0 fixed h-screen z-40 w-72 p-3 lg:border-r border-none border-gray text-dark transition-transform lg:translate-x-0 bg-white dark:bg-[#171923] ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <aside className={`left-0 top-0 fixed h-screen z-40 w-72 p-3 border-r border-gray text-dark transition-transform lg:translate-x-0 bg-white dark:bg-[#171923] ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
       <div className='flex gap-2  bg-lightBlue w-full px-4 py-2 mb-5 rounded-xl'>
         <img
           src={logo}
@@ -57,7 +57,7 @@ const SideBar = ({ isSidebarOpen }) => {
             ))}
           </div>
         </div>
-        <div className='absolute bottom-3 flex items-center w-full justify-between dark:bg-gray dark:bg-opacity-50 p-2 rounded-xl'>
+        <div className='absolute bottom-3 w-64 flex items-center justify-between dark:bg-gray dark:bg-opacity-50 p-2 rounded-xl'>
           <div className='flex items-center gap-2'>
             <img src={avatar} alt="" className='rounded-full' />
             <div className='flex flex-col'>
